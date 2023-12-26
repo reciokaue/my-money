@@ -15,6 +15,22 @@
       "category": "Alimentação",
       "price": 25,
       "createdAt": "2023-12-26T09:44:46.292Z"
+    },
+    {
+      "category": "Alimentação",
+      "description": "Comida",
+      "price": 15,
+      "type": "outcome",
+      "createdAt": "2023-12-26T12:43:54.988Z",
+      "id": 3
+    },
+    {
+      "category": "Alimentação",
+      "description": "Banofre",
+      "price": 10,
+      "type": "outcome",
+      "createdAt": "2023-12-26T12:52:20.436Z",
+      "id": 4
     }
   ]
 }

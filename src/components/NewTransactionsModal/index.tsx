@@ -12,6 +12,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import * as Dialog from '@radix-ui/react-dialog'
 import * as z from 'zod'
 import { SpinningIcon } from '../SearchForm/styles'
+import { useTransactions } from '../../contexts/Transactions'
 
 const transactionSchema = z.object({
   description: z.string(),
@@ -24,6 +25,7 @@ type TransactionInputs = z.infer<typeof transactionSchema>
 
 export function NewTransactionsModal() {
   const {
+    reset,
     control,
     register,
     handleSubmit,
@@ -32,9 +34,12 @@ export function NewTransactionsModal() {
     resolver: zodResolver(transactionSchema),
   })
 
+  const { createTransaction } = useTransactions()
+
   async function handleCreateNewTransactions(data: TransactionInputs) {
-    await new Promise((resolve) => setTimeout(resolve, 2000))
-    console.log(data)
+    createTransaction(data)
+
+    reset()
   }
 
   return (
