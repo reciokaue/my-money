@@ -3,6 +3,7 @@ import { SearchForm } from '../../components/SearchForm'
 import { Summary } from '../../components/Summary'
 import { PriceHighlight, Table, TransactionsContainer } from './styles'
 import { useTransactions } from '../../contexts/Transactions'
+import { dateFormatter, priceFormatter } from '../../utils/formatter'
 
 export function Transactions() {
   const { transactions } = useTransactions()
@@ -21,11 +22,12 @@ export function Transactions() {
                 <td width="50%">{item.description}</td>
                 <td>
                   <PriceHighlight variant={item.type}>
-                    R$ {item.price}
+                    {item.type === 'outcome' && '- '}
+                    {priceFormatter(item.price)}
                   </PriceHighlight>
                 </td>
                 <td>{item.category}</td>
-                <td>{item.createdAt}</td>
+                <td>{dateFormatter(item.createdAt)}</td>
               </tr>
             ))}
           </tbody>
