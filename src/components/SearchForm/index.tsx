@@ -1,4 +1,4 @@
-import { CircleNotch, MagnifyingGlass } from 'phosphor-react'
+import { MagnifyingGlass } from 'phosphor-react'
 import { SearchFormContainer, SpinningIcon } from './styles'
 import { useForm } from 'react-hook-form'
 import * as z from 'zod'
